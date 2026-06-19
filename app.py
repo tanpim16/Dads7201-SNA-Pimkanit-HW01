@@ -337,7 +337,7 @@ with st.sidebar:
     sel_holder  = st.selectbox("Shareholder", ["All"] + all_holders, key="filter_holder")
     sel_sector  = st.selectbox("Sector", ["All"] + all_sectors, key="filter_sector")
     min_stake   = st.slider("Min Stake (%)", 0.0, 80.0, 0.0, 0.5)
-    st.caption("Note :\nMin Stake (%) = 0 คือ เห็นทุกคน\nMin Stake (%) = 30 คือ เห็นแค่คนที่ถือหุ้นเกิน 30%")
+    st.markdown("<small style='color:#6b7280'>Note :<br>Min Stake (%) = 0 &nbsp;→ เห็นทุกคน<br>Min Stake (%) = 30 → เห็นแค่คนที่ถือหุ้นเกิน 30%</small>", unsafe_allow_html=True)
     layout_labels = {
         "spring": "🌐 Spring (กระจายอิสระ)",
         "circular": "⭕ Circular (วงกลม)",
