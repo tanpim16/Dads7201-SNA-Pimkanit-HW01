@@ -165,7 +165,7 @@ def draw_network(G, layout_type="spring", uirev="0"):
 
     fig = go.Figure()
     degrees = dict(G.degree())
-    max_deg = max(degrees.values()) if degrees else 1
+    max_deg = max(degrees.values(), default=1) or 1
     many_sh = len([n for n, a in G.nodes(data=True) if a["type"] == "shareholder"]) > 30
 
     # ── Edges (3 weight tiers) — Scattergl for speed ──
@@ -252,7 +252,7 @@ def draw_network(G, layout_type="spring", uirev="0"):
         )
 
     sh_degrees = [degrees.get(n, 1) for n in shareholder_nodes]
-    max_sh = max(sh_degrees) if sh_degrees else 1
+    max_sh = max(sh_degrees, default=1) or 1
     sh_sizes = [14 + 20 * (d / max_sh) for d in sh_degrees]
     sh_mode = "markers" if many_sh else "markers+text"
 
