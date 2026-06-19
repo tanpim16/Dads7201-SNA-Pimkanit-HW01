@@ -337,7 +337,7 @@ with st.sidebar:
     sel_holder  = st.selectbox("Shareholder", ["All"] + all_holders, key="filter_holder")
     sel_sector  = st.selectbox("Sector", ["All"] + all_sectors, key="filter_sector")
     min_stake   = st.slider("Min Stake (%)", 0.0, 80.0, 0.0, 0.5)
-    st.caption("แสดงเฉพาะผู้ถือหุ้นที่มีสัดส่วนมากกว่าค่านี้ขึ้นไป")
+    st.caption("ตั้ง 30 = เห็นแค่คนที่ถือหุ้นเกิน 30%")
     layout_labels = {
         "spring": "🌐 Spring (กระจายอิสระ)",
         "circular": "⭕ Circular (วงกลม)",
